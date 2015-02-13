@@ -7,7 +7,11 @@ describe ("toBase", function() {
     expect(toBase("10101", 2)).to.equal(21);
   });
 
-  it("will convert a number from another base", function() {
+  it("will convert a number from any lower base than 10", function() {
     expect(toBase("1210", 3)).to.equal(48);
+  });
+
+  it("will convert to a number from any base between 11 and 20 to base 10", function() {
+    expect(toBase("1ab", 12)).to.equal(275);
   });
 });
