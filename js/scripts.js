@@ -1,12 +1,9 @@
-var toBase = function(binary) {
-  var reverseInput = binary.split("").reverse().join("");
-  var newNumber = 0
+var toBase = function(numInput, baseInput) {
+  var reverseInput = numInput.split("").reverse().join("");
+  var newNumber = 0;
 
   for (var i = 0; i < reverseInput.length; ++i) {
-// debugger;
-    if (reverseInput.charAt(i) == 1) {
-      newNumber += Math.pow(2, i);
-    }
+    newNumber += (Math.pow(baseInput, i) * reverseInput.charAt(i));
   }
   return newNumber;
 };
